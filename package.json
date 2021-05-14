@@ -2,9 +2,10 @@
   "name": "WebPackBuilder",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./build/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "npm run compile && electron .",
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/ArnoldNunez/WebPackBuilder#readme",
   "devDependencies": {
-    "electron": "^12.0.7"
+    "electron": "^12.0.7",
+    "typescript": "^4.2.4"
   }
 }
