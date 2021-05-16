@@ -3,7 +3,7 @@
 
 // const path = require('path')
 import { app, BrowserWindow } from 'electron';
-import { Application } from "./core/Application";
+import { Application } from "./core/Application/Application";
 
 let application = new Application();
 
