@@ -4,7 +4,7 @@
   "description": "",
   "main": "./build/main.js",
   "scripts": {
-    "start": "npm run compile && electron .",
+    "start": "npm run compile && electron .--developement",
     "compile": "tsc"
   },
   "repository": {
