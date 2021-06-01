@@ -1,11 +1,15 @@
 import { BrowserWindow } from "electron";
+import { DEVELOPMENT_URL } from "../Models/constants";
+import { Arguments } from "../utils/argument-parser";
 
 
 /**
  * Represents the core application
  */
 export class Application {
-    constructor() { }
+    private mainWindow: BrowserWindow | undefined;
+
+    constructor(private envArgs: Partial<Arguments>) { }
 
 
     /**
@@ -28,15 +32,20 @@ export class Application {
      * Shows the main window
      */
     public ShowMainWindow(): void {
-        let mainWindow = new BrowserWindow({
+        this.mainWindow = new BrowserWindow({
             width: 800,
             height: 600,
             // webPreferences: {
             //   preload: path.join(__dirname, 'preload.js')
             // }
-        })
+        });
 
-        mainWindow.loadFile('index.html');
+        // Set client app load method
+        if (this.envArgs.development) {
+            this.mainWindow.loadURL(DEVELOPMENT_URL);
+        } else {
+            this.mainWindow.loadFile('index.html');
+        }
     }
 
     /**

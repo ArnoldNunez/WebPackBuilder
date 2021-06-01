@@ -1,11 +1,9 @@
-// const { app, BrowserWindow } = require('electron')
-// const path = require('path')
-
-// const path = require('path')
 import { app, BrowserWindow } from 'electron';
 import { Application } from "./core/Application/Application";
+import { ArgumentParser } from './core/utils/argument-parser'
 
-let application = new Application();
+const env = ArgumentParser.parse(process.argv);
+const application = new Application(env);
 
 app.whenReady().then(() => {
 
@@ -20,7 +18,6 @@ app.whenReady().then(() => {
   })
 
 })
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

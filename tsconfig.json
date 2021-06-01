@@ -6,5 +6,8 @@
         "esModuleInterop": false,
         "outDir": "./build"
     },
-    "include": ["core/", "./main.ts"]
+    "include": [
+        "core/",
+        "./main.ts"
+    ]
 }
