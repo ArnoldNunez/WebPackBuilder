@@ -1,0 +1,1 @@
+export const DEVELOPMENT_URL = "http://localhost:4200";

@@ -4,7 +4,8 @@
   "description": "",
   "main": "./build/main.js",
   "scripts": {
-    "start": "npm run compile && electron .--developement",
+    "postinstall": "cd client && npm i",
+    "start": "npm run compile && electron . --development",
     "compile": "tsc"
   },
   "repository": {

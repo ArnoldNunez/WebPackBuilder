@@ -3,8 +3,12 @@
         "target": "ES5",
         "module": "commonjs",
         "strict": true,
+        "sourceMap": true,
         "esModuleInterop": false,
         "outDir": "./build"
     },
-    "include": ["core/", "./main.ts"]
+    "include": [
+        "core/",
+        "./main.ts"
+    ]
 }
